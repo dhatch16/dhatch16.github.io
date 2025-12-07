@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draysen Hatch - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #5dade2;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color) !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+        
+        .resume-section {
+            padding: 60px 0;
+        }
+        
+        .experience-card, .education-card {
+            background: white;
+            border-left: 4px solid var(--secondary-color);
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .experience-card:hover, .education-card:hover {
+            transform: translateX(10px);
+        }
+        
+        .job-title, .degree-title {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .company-name, .school-name {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .date-range {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .skills-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+        
+        .skill-badge {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            background-color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-user-tie"></i> Draysen Hatch</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Draysen Hatch</h1>
+            <p>Business Management Student | Enrollment Specialist | Data Analyst</p>
+            <a href="#experience" class="btn btn-light btn-lg">View My Resume</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="resume-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="lead">I am a driven Business Management student at Brigham Young University with a passion for helping others achieve their goals. Currently working as an Enrollment Specialist at Walden University, I combine my analytical skills with strong interpersonal abilities to guide students through complex processes. My background in management and technical proficiency in data analysis tools like SQL, Tableau, and Excel makes me well-equipped to solve business challenges through data-driven insights.</p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="resume-section bg-light">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="experience-card">
+                <div class="job-title">Enrollment Specialist</div>
+                <div class="company-name">Walden University</div>
+                <div class="date-range">September 2025 - Present</div>
+                <p>Assist prospective students throughout the enrollment process, ensuring all required paperwork and forms are completed accurately and efficiently. Provide personalized guidance to help students navigate admissions requirements, answer questions about programs, and facilitate a smooth transition into their academic journey. Build strong rapport with diverse student populations while maintaining organized documentation and meeting enrollment deadlines.</p>
+            </div>
+
+            <div class="experience-card">
+                <div class="job-title">Management Position</div>
+                <div class="company-name">1-800 Striper (Parking Lot Construction)</div>
+                <div class="date-range">June 2024 - April 2025</div>
+                <p>Managed construction crews responsible for painting parking lots, installing signage, and placing wheel stops across multiple project sites. Coordinated daily operations, scheduled crew assignments, and ensured quality control standards were met. Developed strong leadership skills while overseeing team productivity, maintaining safety protocols, and communicating with clients to ensure project specifications were fulfilled on time and within budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="resume-section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-card">
+                <div class="degree-title">Bachelor of Science in Business Management</div>
+                <div class="school-name">Brigham Young University</div>
+                <div class="date-range">Expected Graduation: 2027</div>
+                <p>Pursuing a comprehensive business education with focus on management principles, data analytics, and business technology. Developing expertise in database design, business intelligence tools, and programming applications for business solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Skills & Competencies</h2>
+            
+            <h4 class="mt-4 mb-3">Technical Skills</h4>
+            <div>
+                <span class="skill-badge">Database Design & Development</span>
+                <span class="skill-badge">Entity Relationship Diagramming</span>
+                <span class="skill-badge">SQL (Structured Query Language)</span>
+                <span class="skill-badge">Tableau</span>
+                <span class="skill-badge">Excel Solver</span>
+                <span class="skill-badge">Pivot Tables & Charts</span>
+                <span class="skill-badge">HTML</span>
+                <span class="skill-badge">CSS</span>
+                <span class="skill-badge">Bootstrap</span>
+                <span class="skill-badge">Flow Chart Diagramming</span>
+                <span class="skill-badge">VBA Programming in Excel</span>
+            </div>
+            
+            <h4 class="mt-5 mb-3">Professional Skills</h4>
+            <div>
+                <span class="skill-badge">Sales</span>
+                <span class="skill-badge">Rapport Building</span>
+                <span class="skill-badge">Team Management</span>
+                <span class="skill-badge">Customer Service</span>
+                <span class="skill-badge">Project Coordination</span>
+                <span class="skill-badge">Communication</span>
+                <span class="skill-badge">Problem Solving</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-icons mb-3">
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/dhatch16" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:contact@draysenhatch.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2024 Draysen Hatch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

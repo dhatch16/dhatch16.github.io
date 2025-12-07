@@ -1,0 +1,236 @@
+/* Custom Stylesheet for Sports & Outdoors Page */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.8;
+    color: #2c3e50;
+    background-color: #e8f4f8;
+    background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Header Container Div */
+.header-container {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.header-container h1 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 3em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+    font-family: 'Courier New', monospace;
+    font-size: 1.3em;
+    font-style: italic;
+    color: #95a5a6;
+}
+
+/* Main Content Container Div */
+.content-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Intro Section Div */
+.intro-section {
+    background-color: #3498db;
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 35px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.1em;
+}
+
+.main-content h2 {
+    color: #2c3e50;
+    font-family: 'Arial', sans-serif;
+    font-size: 2em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.main-content p {
+    font-family: 'Georgia', serif;
+    color: #34495e;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Content Images */
+.content-image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 8px;
+    margin: 25px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: block;
+}
+
+/* Ordered and Unordered Lists */
+.activity-list {
+    margin: 25px 0;
+    padding-left: 30px;
+}
+
+.activity-list > li {
+    font-family: 'Arial', sans-serif;
+    color: #2c3e50;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.activity-list ul {
+    margin-top: 10px;
+    list-style-type: circle;
+}
+
+.activity-list ul li {
+    font-family: 'Georgia', serif;
+    color: #555;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    font-weight: normal;
+}
+
+/* Quote Box Div */
+.quote-box {
+    background-color: #ecf0f1;
+    border-left: 5px solid #3498db;
+    padding: 20px;
+    margin: 30px 0;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+
+/* Sports Grid Div */
+.sports-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.sport-card {
+    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.sport-card h3 {
+    font-family: 'Arial Black', sans-serif;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.sport-card p {
+    font-family: 'Verdana', sans-serif;
+    color: white;
+    text-align: left;
+}
+
+/* Tableau Container */
+.tableau-container {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Game Link */
+.game-link {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0;
+    transition: background-color 0.3s ease;
+}
+
+.game-link:hover {
+    background-color: #c0392b;
+}
+
+/* Navigation Back Div */
+.nav-back {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid #bdc3c7;
+    text-align: center;
+}
+
+.back-button {
+    display: inline-block;
+    background-color: #34495e;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #2c3e50;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    font-family: 'Verdana', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sports-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-container h1 {
+        font-size: 2em;
+    }
+    
+    .content-container {
+        padding: 20px;
+        margin: 20px;
+    }
+}

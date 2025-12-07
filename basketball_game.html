@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Shooting Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .game-container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #e74c3c;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .scoreboard {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+        }
+
+        .score-item {
+            text-align: center;
+        }
+
+        .score-label {
+            font-size: 0.9em;
+            color: #95a5a6;
+            margin-bottom: 5px;
+        }
+
+        .score-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .court {
+            background: linear-gradient(180deg, #d4a574 0%, #c89965 100%);
+            border: 5px solid #8b6f47;
+            border-radius: 15px;
+            height: 300px;
+            position: relative;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .hoop {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 15px;
+            background: #e74c3c;
+            border: 3px solid #c0392b;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .backboard {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 3px solid #fff;
+            border-radius: 5px;
+        }
+
+        .basketball {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 30% 30%, #ff8c42, #e67e22);
+            border: 2px solid #d35400;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.1s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .basketball:hover {
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .basketball.shooting {
+            animation: shoot 1s ease-in-out;
+        }
+
+        @keyframes shoot {
+            0% {
+                bottom: 30px;
+                left: 50%;
+            }
+            50% {
+                bottom: 150px;
+                transform: translateX(-50%) scale(0.7);
+            }
+            100% {
+                bottom: 50px;
+                left: 50%;
+                transform: translateX(-50%) scale(0.8);
+            }
+        }
+
+        .basketball.score-animation {
+            animation: scoreShot 1s ease-in-out;
+        }
+
+        @keyframes scoreShot {
+            0% {
+                bottom: 30px;
+                left: 50%;
+            }
+            50% {
+                bottom: 200px;
+                transform: translateX(-50%) scale(0.6);
+            }
+            70% {
+                bottom: 60px;
+                transform: translateX(-50%) scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .reset-btn:hover {
+            background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.3em;
+            color: #2c3e50;
+            font-weight: bold;
+            min-height: 30px;
+        }
+
+        .message.score {
+            color: #27ae60;
+            animation: celebrate 0.5s ease;
+        }
+
+        .message.miss {
+            color: #e74c3c;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes celebrate {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .instructions {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            color: #34495e;
+            font-size: 0.95em;
+            font-family: Arial, sans-serif;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🏀 Basketball Shooting Game</h1>
+        <p class="subtitle">Click the ball to shoot! Can you beat your high score?</p>
+
+        <div class="scoreboard">
+            <div class="score-item">
+                <div class="score-label">SCORE</div>
+                <div class="score-value" id="score">0</div>
+            </div>
+            <div class="score-item">
+                <div class="score-label">MISSES</div>
+                <div class="score-value" id="misses">0</div>
+            </div>
+            <div class="score-item">
+                <div class="score-label">HIGH SCORE</div>
+                <div class="score-value" id="highScore">0</div>
+            </div>
+        </div>
+
+        <div class="court">
+            <div class="backboard"></div>
+            <div class="hoop"></div>
+            <div class="basketball" id="ball"></div>
+        </div>
+
+        <div class="message" id="message"></div>
+
+        <div class="controls">
+            <button id="shootBtn">SHOOT</button>
+            <button class="reset-btn" id="resetBtn">RESET GAME</button>
+        </div>
+
+        <div class="instructions">
+            <strong>How to Play:</strong> Click the SHOOT button or click the basketball to take a shot! 
+            Each shot has a random chance of going in. Try to get the highest score possible!
+        </div>
+
+        <a href="scratch.html" class="back-link">← Back to Sports & Outdoors Page</a>
+    </div>
+
+    <script>
+        let score = 0;
+        let misses = 0;
+        let highScore = 0;
+        let isShooting = false;
+
+        const ball = document.getElementById('ball');
+        const scoreDisplay = document.getElementById('score');
+        const missesDisplay = document.getElementById('misses');
+        const highScoreDisplay = document.getElementById('highScore');
+        const messageDisplay = document.getElementById('message');
+        const shootBtn = document.getElementById('shootBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        function shoot() {
+            if (isShooting) return;
+            
+            isShooting = true;
+            messageDisplay.textContent = '';
+            messageDisplay.className = 'message';
+
+            // Random chance of making the shot (50% chance)
+            const madeShot = Math.random() < 0.5;
+
+            if (madeShot) {
+                ball.classList.add('score-animation');
+                setTimeout(() => {
+                    score++;
+                    scoreDisplay.textContent = score;
+                    
+                    if (score > highScore) {
+                        highScore = score;
+                        highScoreDisplay.textContent = highScore;
+                    }
+                    
+                    messageDisplay.textContent = '🎉 SWISH! Nice shot!';
+                    messageDisplay.className = 'message score';
+                    ball.classList.remove('score-animation');
+                    isShooting = false;
+                }, 1000);
+            } else {
+                ball.classList.add('shooting');
+                setTimeout(() => {
+                    misses++;
+                    missesDisplay.textContent = misses;
+                    messageDisplay.textContent = '❌ Miss! Try again!';
+                    messageDisplay.className = 'message miss';
+                    ball.classList.remove('shooting');
+                    isShooting = false;
+                }, 1000);
+            }
+        }
+
+        function resetGame() {
+            score = 0;
+            misses = 0;
+            scoreDisplay.textContent = score;
+            missesDisplay.textContent = misses;
+            messageDisplay.textContent = 'Game Reset! Good luck!';
+            messageDisplay.className = 'message';
+        }
+
+        shootBtn.addEventListener('click', shoot);
+        ball.addEventListener('click', shoot);
+        resetBtn.addEventListener('click', resetGame);
+
+        // Keyboard support - press spacebar to shoot
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                shoot();
+            }
+        });
+    </script>
+</body>
+</html>
