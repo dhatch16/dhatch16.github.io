@@ -71,10 +71,11 @@
             </div>
 
             <h2>Outdoor Recreation Data</h2>
-            <p>Check out this interactive visualization showing regional outdoor recreation data. Explore the trends and statistics about outdoor activities across different areas:</p>
+            <p>Check out this interactive visualization showing U.S. National Parks visitor data. You can explore different parks and see visitor trends over time:</p>
             
             <div class="tableau-container">
-                <iframe src="https://public.tableau.com/views/RegionalIndicatorWorkbook/TourismDashboard?:showVizHome=no&:embed=true" width="100%" height="650" frameborder="0"></iframe>
+                <script type='module' src='https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script>
+                <tableau-viz id='tableau-viz' src='https://public.tableau.com/views/NationalParksBiodiversity/Dashboard1' width='800' height='600' hide-tabs toolbar='bottom' ></tableau-viz>
             </div>
 
             <h2>Check Out My Basketball Game!</h2>
